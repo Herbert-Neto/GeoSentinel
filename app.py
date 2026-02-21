@@ -48,6 +48,7 @@ TWITTER_ACCESS_TOKEN = "YOUR_API_KEYS"
 TWITTER_ACCESS_TOKEN_SECRET = "YOUR_API_KEYS"
 TWITTER_BEARER_TOKEN = "YOUR_API_KEYS"
 api_key = "YOUR_API_KEYS"
+api_ais = '940e048f1087599cee76ff89c5f0d0af284d9745'
 # --- CELL TOWER UPLINK ---
 OPENCELLID_API_KEY = "YOUR_API_KEY" 
 HF_TOKEN = "YOUR_API_KEY" 
@@ -401,7 +402,7 @@ def start_ais_websocket():
         async with websockets.connect("wss://stream.aisstream.io/v0/stream") as websocket:
             # Subscribe to global ship positions
             subscribe_message = {
-                "APIKey": api_key,
+                "APIKey": api_ais,
                 "BoundingBoxes": [[[-90, -180], [90, 180]]]  # Global coverage
             }
             
